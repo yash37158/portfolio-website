@@ -1,0 +1,14 @@
+#img {
+  width: 30%;
+  border-radius: 100%;
+}
+
+.alert{
+  text-align:center;
+  padding: 10px;
+  background: #79c879; 
+  color:white;
+   margin: bottom 10px;
+  display:none;
+}
+
