@@ -49,7 +49,7 @@ const projectsData = [
       "A full-featured Transform natural language into production-ready infrastructure code. Support for Terraform, Kubernetes, Docker, and more.",
     image: "/images/iacgpt.png",
     tags: ["Next.js", "Vite", "ShadCn", "GPT-3.0", "Typescript", "Tailwind"],
-    liveLink: "https://ai-cloud-architect.lovable.app/",
+    liveLink: "https://ai-cloud-architect.netlify.app/",
     githubLink: "https://github.com/yash37158/ai-cloud-architect",
   },
 ]
