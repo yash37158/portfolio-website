@@ -8,15 +8,6 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const projectsData = [
   {
-    title: "E-Commerce Platform",
-    description:
-      "A full-featured e-commerce platform for eyewear branc with product management, cart functionality, and payment processing.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["React", "Node.js", "MongoDB"],
-    liveLink: "#",
-    githubLink: "https://github.com/yash37158/Eskay-eyewear",
-  },
-  {
     title: "Meshify",
     description:
       "A comprehensive service mesh analytical platform designed to monitor, manage and secure their microservices. Service mesh generates a large amount of data that can be analyzed to identify patterns, trends, and performance issues. ",
@@ -48,9 +39,17 @@ const projectsData = [
     description:
       "A full-featured Transform natural language into production-ready infrastructure code. Support for Terraform, Kubernetes, Docker, and more.",
     image: "/images/iacgpt.png",
-    tags: ["Next.js", "Vite", "ShadCn", "GPT-3.0", "Typescript", "Tailwind"],
+    tags: ["Next.js", "Vite", "ShadCn", "gemini-2.0-flash", "Typescript", "Tailwind"],
     liveLink: "https://ai-cloud-architect.netlify.app/",
     githubLink: "https://github.com/yash37158/ai-cloud-architect",
+  },
+  {
+    title: "AutoRideEDA - NextGen Autonomous Vehicle booking platform",
+    description:
+      "Event-driven autonomous taxi fleet simulation backend built with microservices architecture, Kafka, and Neon PostgreSQL.",
+    image: "/images/autorideeda.png",
+    tags: ["React", "Mapbox", "Kafka", "Neon PostgreSQL", "Microservices", "Event-driven", "Digital Ocean"],
+    githubLink: "https://github.com/yash37158/AutoRide-EDA",
   },
 ]
 
