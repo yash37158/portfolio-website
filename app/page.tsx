@@ -13,6 +13,7 @@ import { BackgroundAnimation } from "@/components/background-animation"
 import { Achievements } from "@/components/achievements"
 import { Experience } from "@/components/experience"
 import { TwitterThreads } from "@/components/twitter-threads"
+import { Blogs } from "@/components/blogs"
 
 export default function Home() {
   // Add scroll animation observer
@@ -23,10 +24,13 @@ export default function Home() {
       threshold: 0.1,
     }
 
-    const handleIntersect = (entries, observer) => {
-      entries.forEach((entry) => {
+    const handleIntersect = (
+      entries: IntersectionObserverEntry[],
+      _observer: IntersectionObserver
+    ) => {
+      entries.forEach((entry: IntersectionObserverEntry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible")
+          (entry.target as Element).classList.add("visible")
         }
       })
     }
@@ -61,6 +65,7 @@ export default function Home() {
           <Experience />
           <Skills />
           <Projects />
+          <Blogs />
           <Achievements />
           <GithubContributions />
           <Contact />

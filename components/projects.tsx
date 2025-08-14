@@ -8,6 +8,15 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const projectsData = [
   {
+    title: "Bytes by Yash",
+    description:
+      "A personal blog platform where I share insights on technology, cloud-native development, and software engineering. Features include dynamic content management, responsive design, and SEO optimization.",
+    image: "/images/bytes-by-yash.png",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Content Management", "SEO", "Responsive Design"],
+    githubLink: "https://github.com/yash37158/bytes-by-yash",
+    liveLink: "https://bytes-by-yash.vercel.app/",
+  },
+  {
     title: "Meshify",
     description:
       "A comprehensive service mesh analytical platform designed to monitor, manage and secure their microservices. Service mesh generates a large amount of data that can be analyzed to identify patterns, trends, and performance issues. ",

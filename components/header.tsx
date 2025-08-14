@@ -20,7 +20,7 @@ export function Header() {
       "projects",
       "achievements",
       "github",
-      "twitter",
+      "blogs",
       "contact",
     ]
 
@@ -52,6 +52,19 @@ export function Header() {
     }
   }, [])
 
+  // Smooth scroll to section
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const headerHeight = 80 // Approximate header height
+      const elementPosition = element.offsetTop - headerHeight
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
       <div className="container mx-auto px-4 py-4">
@@ -64,11 +77,11 @@ export function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
-            {["Home", "About", "Experience", "Skills", "Projects", "Achievements", "GitHub", "Twitter", "Contact"].map(
+            {["Home", "About", "Experience", "Skills", "Projects", "Achievements", "GitHub", "Blog", "Contact"].map(
               (item) => (
-                <Link
+                <button
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  onClick={() => scrollToSection(item.toLowerCase())}
                   className={`text-sm font-medium transition-colors duration-200 hover:text-purple-400 ${
                     activeSection === item.toLowerCase()
                       ? "text-purple-500 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-purple-500"
@@ -76,7 +89,7 @@ export function Header() {
                   }`}
                 >
                   {item}
-                </Link>
+                </button>
               ),
             )}
             <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-500/10">
@@ -105,19 +118,21 @@ export function Header() {
                 "Projects",
                 "Achievements",
                 "GitHub",
-                "Twitter",
+                "Blog",
                 "Contact",
               ].map((item) => (
-                <Link
+                <button
                   key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className={`py-2 transition-colors duration-200 hover:text-purple-400 ${
+                  onClick={() => {
+                    scrollToSection(item.toLowerCase())
+                    setIsMenuOpen(false)
+                  }}
+                  className={`py-2 text-left transition-colors duration-200 hover:text-purple-400 ${
                     activeSection === item.toLowerCase() ? "text-purple-500" : "text-gray-300"
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item}
-                </Link>
+                </button>
               ))}
               <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-500/10 w-full">
                 Resume
