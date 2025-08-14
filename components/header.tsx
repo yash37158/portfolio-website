@@ -77,21 +77,29 @@ export function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
-            {["Home", "About", "Experience", "Skills", "Projects", "Achievements", "GitHub", "Blog", "Contact"].map(
-              (item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-sm font-medium transition-colors duration-200 hover:text-purple-400 ${
-                    activeSection === item.toLowerCase()
-                      ? "text-purple-500 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-purple-500"
-                      : "text-gray-300"
-                  }`}
-                >
-                  {item}
-                </button>
-              ),
-            )}
+            {[
+              { name: "Home", id: "home" },
+              { name: "About", id: "about" },
+              { name: "Experience", id: "experience" },
+              { name: "Skills", id: "skills" },
+              { name: "Projects", id: "projects" },
+              { name: "Achievements", id: "achievements" },
+              { name: "GitHub", id: "github" },
+              { name: "Blog", id: "blogs" },
+              { name: "Contact", id: "contact" }
+            ].map((item) => (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-sm font-medium transition-colors duration-200 hover:text-purple-400 ${
+                  activeSection === item.id
+                    ? "text-purple-500 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-purple-500"
+                    : "text-gray-300"
+                }`}
+              >
+                {item.name}
+              </button>
+            ))}
             <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-500/10">
             <a href="https://drive.google.com/file/d/10FDMFNK4GxEXV8d4XKwprwMCA8UEtOa0/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               Resume
@@ -111,27 +119,27 @@ export function Header() {
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
               {[
-                "Home",
-                "About",
-                "Experience",
-                "Skills",
-                "Projects",
-                "Achievements",
-                "GitHub",
-                "Blog",
-                "Contact",
+                { name: "Home", id: "home" },
+                { name: "About", id: "about" },
+                { name: "Experience", id: "experience" },
+                { name: "Skills", id: "skills" },
+                { name: "Projects", id: "projects" },
+                { name: "Achievements", id: "achievements" },
+                { name: "GitHub", id: "github" },
+                { name: "Blog", id: "blogs" },
+                { name: "Contact", id: "contact" }
               ].map((item) => (
                 <button
-                  key={item}
+                  key={item.name}
                   onClick={() => {
-                    scrollToSection(item.toLowerCase())
+                    scrollToSection(item.id)
                     setIsMenuOpen(false)
                   }}
                   className={`py-2 text-left transition-colors duration-200 hover:text-purple-400 ${
-                    activeSection === item.toLowerCase() ? "text-purple-500" : "text-gray-300"
+                    activeSection === item.id ? "text-purple-500" : "text-gray-300"
                   }`}
                 >
-                  {item}
+                  {item.name}
                 </button>
               ))}
               <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-500/10 w-full">
