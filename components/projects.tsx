@@ -60,6 +60,22 @@ const projectsData = [
     tags: ["React", "Mapbox", "Kafka", "Neon PostgreSQL", "Microservices", "Event-driven", "Digital Ocean"],
     githubLink: "https://github.com/yash37158/AutoRide-EDA",
   },
+  {
+    title: "scaleMind MCP",
+    description:
+      "An intelligent autoscaling MCP (Model Context Protocol) server that enables DevOps engineers to manage cloud infrastructure scaling through natural language conversations in Cursor IDE. Eliminate manual scaling decisions, optimize costs, and predict scaling needs using AI-driven analysis for AWS and Kubernetes infrastructure.",
+    image: "/images/scaleMind-MCP.png",
+    tags: ["MCP", "AI", "TypeScript", "Node.js", "AWS", "Kubernetes", "DevOps", "Autoscaling"],
+    liveLink: "https://scale-mind-waitlist.vercel.app/",
+  },
+  {
+    title: "MatchCraftResume",
+    description:
+      "An AI-powered resume optimization tool that helps job seekers optimize their resumes for ATS systems. Get instant feedback on how well your resume matches job descriptions and increase your interview chances with AI-powered analysis and actionable recommendations.",
+    image: "/images/Matchcraftresume.png",
+    tags: ["Next.js", "TypeScript", "AI", "Resume Optimization", "ATS", "Tailwind CSS"],
+    liveLink: "https://matchcraftresume.netlify.app/",
+  },
 ]
 
 export function Projects() {
