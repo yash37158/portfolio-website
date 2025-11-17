@@ -5,7 +5,7 @@ export function About() {
     <section id="about" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-1">About Me</h2>
-        <div className="w-20 h-1 bg-purple-500 mb-10"></div>
+        <div className="w-20 h-1 bg-blue-500 mb-10"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center stagger-animation">
           <div>
@@ -28,14 +28,14 @@ export function About() {
             <ul className="grid grid-cols-2 gap-2 mt-4 text-sm">
               {["JavaScript (ES6+)", "TypeScript", "React", "Next.js", "Node.js", "GraphQL"].map((tech) => (
                 <li key={tech} className="flex items-center text-gray-300">
-                  <span className="text-purple-500 mr-2">▹</span> {tech}
+                  <span className="text-blue-500 mr-2">▹</span> {tech}
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
             <div className="relative aspect-square overflow-hidden rounded-lg border-2 border-gray-800">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yash-pixar-oFNG2r8fmxEf2c3Rp17RMJsRYG2mSQ.jpeg"

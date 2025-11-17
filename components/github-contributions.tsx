@@ -127,17 +127,17 @@ export function GithubContributions() {
   // Function to determine the color based on contribution count
   const getContributionColor = (count) => {
     if (count === 0) return "bg-gray-800"
-    if (count <= 2) return "bg-purple-900"
-    if (count <= 5) return "bg-purple-700"
-    if (count <= 10) return "bg-purple-500"
-    return "bg-purple-300"
+    if (count <= 2) return "bg-blue-900"
+    if (count <= 5) return "bg-blue-700"
+    if (count <= 10) return "bg-blue-500"
+    return "bg-blue-300"
   }
 
   return (
     <section id="github" className="py-20 bg-gray-900/50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-2">GitHub Contributions</h2>
-        <div className="w-20 h-1 bg-purple-500 mb-10"></div>
+        <div className="w-20 h-1 bg-blue-500 mb-10"></div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2">
@@ -211,17 +211,17 @@ export function GithubContributions() {
                       <div className="mt-6 flex items-center justify-end gap-2 text-xs">
                         <span className="text-gray-400">Less</span>
                         <div className="w-3 h-3 rounded-sm bg-gray-800 border border-gray-700"></div>
-                        <div className="w-3 h-3 rounded-sm bg-purple-900 border border-purple-800"></div>
-                        <div className="w-3 h-3 rounded-sm bg-purple-700 border border-purple-600"></div>
-                        <div className="w-3 h-3 rounded-sm bg-purple-500 border border-purple-400"></div>
-                        <div className="w-3 h-3 rounded-sm bg-purple-300 border border-purple-200"></div>
+                        <div className="w-3 h-3 rounded-sm bg-blue-900 border border-blue-800"></div>
+                        <div className="w-3 h-3 rounded-sm bg-blue-700 border border-blue-600"></div>
+                        <div className="w-3 h-3 rounded-sm bg-blue-500 border border-blue-400"></div>
+                        <div className="w-3 h-3 rounded-sm bg-blue-300 border border-blue-200"></div>
                         <span className="text-gray-400">More</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Animated highlight effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-teal-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                 </div>
 
                 {/* Summary stats */}
@@ -229,13 +229,13 @@ export function GithubContributions() {
                   <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-400">Total contributions</span>
-                      <span className="text-xl font-bold text-purple-500">{stats.totalContributions}</span>
+                      <span className="text-xl font-bold text-blue-500">{stats.totalContributions}</span>
                     </div>
                   </div>
                   <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-400">Current streak</span>
-                      <span className="text-xl font-bold text-purple-500">{stats.currentStreak} days</span>
+                      <span className="text-xl font-bold text-blue-500">{stats.currentStreak} days</span>
                     </div>
                   </div>
                 </div>
@@ -251,15 +251,15 @@ export function GithubContributions() {
               <CardContent>
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div className="p-4 bg-gray-700/50 rounded-lg">
-                    <p className="text-3xl font-bold text-purple-500">{stats.totalContributions}</p>
+                    <p className="text-3xl font-bold text-blue-500">{stats.totalContributions}</p>
                     <p className="text-sm text-gray-400">Total</p>
                   </div>
                   <div className="p-4 bg-gray-700/50 rounded-lg">
-                    <p className="text-3xl font-bold text-purple-500">{stats.currentStreak}</p>
+                    <p className="text-3xl font-bold text-blue-500">{stats.currentStreak}</p>
                     <p className="text-sm text-gray-400">Current Streak</p>
                   </div>
                   <div className="p-4 bg-gray-700/50 rounded-lg">
-                    <p className="text-3xl font-bold text-purple-500">{stats.longestStreak}</p>
+                    <p className="text-3xl font-bold text-blue-500">{stats.longestStreak}</p>
                     <p className="text-sm text-gray-400">Longest Streak</p>
                   </div>
                 </div>
@@ -273,7 +273,7 @@ export function GithubContributions() {
               <CardContent>
                 {isLoading ? (
                   <div className="flex justify-center items-center h-40">
-                    <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-purple-500"></div>
+                    <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
                   </div>
                 ) : error ? (
                   <div className="p-4 bg-red-500/20 rounded-lg text-center">

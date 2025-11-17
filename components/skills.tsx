@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const skillsData = [
   {
     category: "Frontend",
-    icon: <Layout className="h-10 w-10 text-purple-500" />,
+    icon: <Layout className="h-10 w-10 text-blue-500" />,
     skills: [
       "HTML5",
       "CSS3",
@@ -22,7 +22,7 @@ const skillsData = [
   },
   {
     category: "Backend",
-    icon: <Server className="h-10 w-10 text-cyan-500" />,
+    icon: <Server className="h-10 w-10 text-teal-500" />,
     skills: ["Node.js", "Express", "Python", "Django", "Ruby on Rails", "PHP", "Java", "Spring Boot"],
   },
   {
@@ -54,7 +54,7 @@ export function Skills() {
     <section id="skills" className="py-20 bg-gray-900/50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-2">Skills</h2>
-        <div className="w-20 h-1 bg-purple-500 mb-10"></div>
+        <div className="w-20 h-1 bg-blue-500 mb-10"></div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
           {skillsData.map((item) => (
@@ -62,7 +62,7 @@ export function Skills() {
               key={item.category}
               className={`p-4 rounded-lg transition-all duration-300 ${
                 activeCategory === item.category
-                  ? "bg-gray-800 border-2 border-purple-500"
+                  ? "bg-gray-800 border-2 border-blue-500"
                   : "bg-gray-800/50 hover:bg-gray-800 border-2 border-transparent"
               }`}
               onClick={() => setActiveCategory(item.category)}
@@ -89,7 +89,7 @@ export function Skills() {
                 ?.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 bg-gray-700 rounded-full text-sm hover:bg-purple-500/20 hover:border-purple-500 border border-gray-600 transition-colors duration-300 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500"
+                    className="px-3 py-1 bg-gray-700 rounded-full text-sm hover:bg-blue-500/20 hover:border-blue-500 border border-gray-600 transition-colors duration-300"
                   >
                     {skill}
                   </span>

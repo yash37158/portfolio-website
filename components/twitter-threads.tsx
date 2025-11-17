@@ -70,7 +70,7 @@ export function TwitterThreads() {
     <section id="twitter" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-2">Twitter Threads</h2>
-        <div className="w-20 h-1 bg-purple-500 mb-10"></div>
+        <div className="w-20 h-1 bg-blue-500 mb-10"></div>
 
         <div className="max-w-3xl mx-auto mb-10">
           <p className="text-gray-300 text-center">
@@ -83,13 +83,13 @@ export function TwitterThreads() {
           {twitterThreadsData.map((tweet) => (
             <Card
               key={tweet.id}
-              className="bg-gray-800/50 border-gray-700 overflow-hidden group hover:border-purple-500 transition-all duration-300"
+              className="bg-gray-800/50 border-gray-700 overflow-hidden group hover:border-blue-500 transition-all duration-300"
             >
               <CardContent className="p-6">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                      <X className="h-6 w-6 text-cyan-400" />
+                    <div className="w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center">
+                      <X className="h-6 w-6 text-teal-400" />
                     </div>
                   </div>
                   <div>
@@ -119,7 +119,7 @@ export function TwitterThreads() {
 
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-4">
-                    <div className="flex items-center text-gray-400 hover:text-purple-400 transition-colors">
+                    <div className="flex items-center text-gray-400 hover:text-blue-400 transition-colors">
                       <MessageCircle className="h-4 w-4 mr-1" />
                       <span>{tweet.replies}</span>
                     </div>
@@ -136,7 +136,7 @@ export function TwitterThreads() {
                     href={tweet.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-cyan-500 hover:text-cyan-400 transition-colors flex items-center"
+                    className="text-teal-500 hover:text-teal-400 transition-colors flex items-center"
                   >
                     <ExternalLink className="h-4 w-4 mr-1" />
                     <span>View</span>
@@ -152,9 +152,9 @@ export function TwitterThreads() {
             href="https://x.com/YashSha49433608"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-full flex items-center gap-2 transition-colors border border-gray-700 hover:border-cyan-500"
+            className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-full flex items-center gap-2 transition-colors border border-gray-700 hover:border-teal-500"
           >
-            <X className="h-5 w-5 text-cyan-400" />
+            <X className="h-5 w-5 text-teal-400" />
             <span>Follow me on Twitter</span>
           </a>
         </div>

@@ -79,19 +79,19 @@ const projectsData = [
 ]
 
 export function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [selectedProject, setSelectedProject] = useState<(typeof projectsData)[0] | null>(null)
 
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-2">Projects</h2>
-        <div className="w-20 h-1 bg-purple-500 mb-10"></div>
+        <div className="w-20 h-1 bg-blue-500 mb-10"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projectsData.map((project, index) => (
             <Card
               key={index}
-              className="bg-gray-800/50 border-gray-700 overflow-hidden group hover:border-purple-500 transition-all duration-300"
+              className="bg-gray-800/50 border-gray-700 overflow-hidden group hover:border-blue-500 transition-all duration-300"
             >
               <div className="relative overflow-hidden aspect-video">
                 <Image
@@ -109,7 +109,7 @@ export function Projects() {
                 </button>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-purple-400">{project.title}</h3>
+                <h3 className="text-xl font-bold mb-2 text-blue-400">{project.title}</h3>
                 <p className="text-gray-300 mb-4 line-clamp-2">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
@@ -123,7 +123,7 @@ export function Projects() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="border-purple-500 text-purple-500 hover:bg-purple-500/10"
+                      className="border-blue-500 text-blue-500 hover:bg-blue-500/10"
                       asChild
                     >
                       <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
@@ -135,7 +135,7 @@ export function Projects() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="border-cyan-500 text-cyan-500 hover:bg-cyan-500/10"
+                      className="border-teal-500 text-teal-500 hover:bg-teal-500/10"
                       asChild
                     >
                       <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
@@ -179,14 +179,14 @@ export function Projects() {
                 </div>
                 <div className="flex gap-4">
                   {selectedProject.liveLink && (
-                    <Button className="bg-purple-600 hover:bg-purple-700" asChild>
+                    <Button className="bg-blue-600 hover:bg-blue-700" asChild>
                       <a href={selectedProject.liveLink} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4 mr-2" /> View Live Site
                       </a>
                     </Button>
                   )}
                   {selectedProject.githubLink && (
-                    <Button variant="outline" className="border-cyan-500 text-cyan-500 hover:bg-cyan-500/10" asChild>
+                    <Button variant="outline" className="border-teal-500 text-teal-500 hover:bg-teal-500/10" asChild>
                       <a href={selectedProject.githubLink} target="_blank" rel="noopener noreferrer">
                         <Github className="h-4 w-4 mr-2" /> View Source Code
                       </a>

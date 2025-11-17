@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Github, Linkedin, Mail, Send, Twitter } from "lucide-react"
+import { Github, Linkedin, Mail, Send, Twitter, Loader2, CheckCircle2, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -13,25 +13,63 @@ export function Contact() {
     email: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null
+    message: string
+  }>({ type: null, message: '' })
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
+    // Clear status when user starts typing
+    if (submitStatus.type) {
+      setSubmitStatus({ type: null, message: '' })
+    }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // In a real app, you would handle form submission here
-    console.log("Form submitted:", formData)
-    alert("Thanks for your message! I'll get back to you soon.")
-    setFormData({ name: "", email: "", message: "" })
+    setIsSubmitting(true)
+    setSubmitStatus({ type: null, message: '' })
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message')
+      }
+
+      // Success
+      setSubmitStatus({
+        type: 'success',
+        message: data.message || 'Your message has been sent successfully! I\'ll get back to you soon.'
+      })
+      setFormData({ name: "", email: "", message: "" })
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Failed to send message. Please try again later.'
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-2">Contact Me</h2>
-        <div className="w-20 h-1 bg-purple-500 mb-10"></div>
+        <div className="w-20 h-1 bg-blue-500 mb-10"></div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
@@ -43,7 +81,7 @@ export function Contact() {
 
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-500">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-500">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
@@ -53,7 +91,7 @@ export function Contact() {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-500">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-500">
                   <Linkedin className="w-5 h-5" />
                 </div>
                 <div>
@@ -66,25 +104,31 @@ export function Contact() {
             <div className="flex gap-4">
               <a
                 href="https://github.com/yash37158"
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-purple-500 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-blue-500 transition-colors duration-300"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a
                 href="https://www.linkedin.com/in/yash-sharma-7b688a19b/"
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-purple-500 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-blue-500 transition-colors duration-300"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="https://x.com/YashSha49433608"
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-purple-500 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-blue-500 transition-colors duration-300"
               >
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="yashsharma37158@gmail.com"
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-purple-500 transition-colors duration-300"
+                href="mailto:yashsharma37158@gmail.com"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-blue-500 transition-colors duration-300"
               >
                 <Mail className="w-5 h-5" />
               </a>
@@ -98,6 +142,24 @@ export function Contact() {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Status Message */}
+                {submitStatus.type && (
+                  <div
+                    className={`p-4 rounded-lg flex items-start gap-3 ${
+                      submitStatus.type === 'success'
+                        ? 'bg-green-500/10 border border-green-500/20 text-green-400'
+                        : 'bg-red-500/10 border border-red-500/20 text-red-400'
+                    }`}
+                  >
+                    {submitStatus.type === 'success' ? (
+                      <CheckCircle2 className="h-5 w-5 flex-shrink-0 mt-0.5" />
+                    ) : (
+                      <AlertCircle className="h-5 w-5 flex-shrink-0 mt-0.5" />
+                    )}
+                    <p className="text-sm">{submitStatus.message}</p>
+                  </div>
+                )}
+
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
                     Name
@@ -109,6 +171,7 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     className="bg-gray-700 border-gray-600"
                   />
                 </div>
@@ -125,6 +188,7 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     className="bg-gray-700 border-gray-600"
                   />
                 </div>
@@ -140,12 +204,25 @@ export function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     className="bg-gray-700 border-gray-600 min-h-[120px]"
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700">
-                  <Send className="w-4 h-4 mr-2" /> Send Message
+                <Button 
+                  type="submit" 
+                  className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 mr-2" /> Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>

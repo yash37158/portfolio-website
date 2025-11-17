@@ -31,9 +31,9 @@ export function BackgroundAnimation() {
 
       getRandomColor() {
         const colors = [
-          "rgba(139, 92, 246, 0.5)", // purple-500
-          "rgba(79, 70, 229, 0.5)", // indigo-600
-          "rgba(6, 182, 212, 0.5)", // cyan-500
+          "rgba(37, 99, 235, 0.5)", // blue-600
+          "rgba(20, 184, 166, 0.5)", // teal-500
+          "rgba(59, 130, 246, 0.5)", // blue-500
         ]
         return colors[Math.floor(Math.random() * colors.length)]
       }

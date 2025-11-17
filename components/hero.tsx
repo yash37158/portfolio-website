@@ -47,24 +47,24 @@ export function Hero() {
   return (
     <section id="home" className="min-h-screen flex flex-col justify-center pt-16 relative overflow-hidden">
       {/* Background accent */}
-      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center sm:text-left px-4 sm:px-6 md:px-0">
-          <div className="inline-block mb-2 px-4 py-1 rounded-full bg-purple-500/10 border border-purple-500/20">
-            <p className="text-purple-400 font-mono text-sm">Hi, my name is</p>
+          <div className="inline-block mb-2 px-4 py-1 rounded-full bg-blue-600/10 border border-blue-600/20">
+            <p className="text-blue-400 font-mono text-sm">Hi, my name is</p>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Yash{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500">Sharma</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500">Sharma</span>
           </h1>
 
           <div className="h-16 md:h-20 mb-8 flex items-center">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-300 leading-tight">
               {text}
-              <span className="inline-block w-2 h-8 md:h-10 bg-purple-500 ml-1 animate-pulse"></span>
+              <span className="inline-block w-2 h-8 md:h-10 bg-blue-500 ml-1 animate-pulse"></span>
             </h2>
           </div>
 
@@ -75,7 +75,7 @@ export function Hero() {
 
           <div className="flex flex-wrap gap-5 justify-center sm:justify-start">
             <Button
-              className="bg-purple-600 hover:bg-purple-700 text-base px-6 py-6 h-auto rounded-xl shadow-lg shadow-purple-500/20 transition-all duration-300 hover:translate-y-[-2px]"
+              className="bg-blue-600 hover:bg-blue-700 text-base px-6 py-6 h-auto rounded-xl shadow-lg shadow-blue-500/20 transition-all duration-300 hover:translate-y-[-2px]"
               asChild
             >
               <a href="https://github.com/yash37158" target="_blank" rel="noopener noreferrer">
@@ -84,7 +84,7 @@ export function Hero() {
             </Button>
             <Button
               variant="outline"
-              className="border-cyan-500 text-cyan-500 hover:bg-cyan-500/10 text-base px-6 py-6 h-auto rounded-xl transition-all duration-300 hover:translate-y-[-2px]"
+              className="border-teal-500 text-teal-500 hover:bg-teal-500/10 text-base px-6 py-6 h-auto rounded-xl transition-all duration-300 hover:translate-y-[-2px]"
               asChild
             >
               <a href="mailto:yashsharma37158@gmail.com">Contact me</a>
@@ -104,7 +104,7 @@ export function Hero() {
 
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="p-2 bg-gray-800/50 rounded-full border border-gray-700">
-          <ArrowDown className="text-purple-500" size={24} />
+          <ArrowDown className="text-blue-500" size={24} />
         </div>
       </div>
     </section>

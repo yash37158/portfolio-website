@@ -147,9 +147,9 @@ export function Achievements() {
       case "bootcamp":
         return <Users className="h-5 w-5 text-emerald-500" />
       case "hackathon":
-        return <Award className="h-5 w-5 text-cyan-500" />
+        return <Award className="h-5 w-5 text-teal-500" />
       case "talk":
-        return <Mic className="h-5 w-5 text-purple-500" />
+        return <Mic className="h-5 w-5 text-blue-500" />
       default:
         return <Info className="h-5 w-5" />
     }
@@ -159,7 +159,7 @@ export function Achievements() {
     <section id="achievements" className="py-20 bg-gray-900/50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-2">Achievements</h2>
-        <div className="w-20 h-1 bg-purple-500 mb-10"></div>
+        <div className="w-20 h-1 bg-blue-500 mb-10"></div>
 
         <div className="max-w-3xl mx-auto mb-10">
           <p className="text-gray-300 text-center">
@@ -173,13 +173,13 @@ export function Achievements() {
           <TabsList className="grid w-full grid-cols-2 mb-8 bg-gray-800/70 border border-gray-700">
             <TabsTrigger
               value="badges"
-              className="data-[state=active]:bg-purple-500/20 data-[state=active]:text-purple-400"
+              className="data-[state=active]:bg-blue-500/20 data-[state=active]:text-blue-400"
             >
               Badges & Certifications
             </TabsTrigger>
             <TabsTrigger
               value="community"
-              className="data-[state=active]:bg-purple-500/20 data-[state=active]:text-purple-400"
+              className="data-[state=active]:bg-blue-500/20 data-[state=active]:text-blue-400"
             >
               Community Work
             </TabsTrigger>
@@ -189,7 +189,7 @@ export function Achievements() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {badgesData.map((badge) => (
                 <div key={badge.id} className="flex flex-col items-center">
-                  <Card className="bg-gray-800/50 border-gray-700 overflow-hidden group hover:border-purple-500 transition-all duration-300 w-full">
+                  <Card className="bg-gray-800/50 border-gray-700 overflow-hidden group hover:border-blue-500 transition-all duration-300 w-full">
                     <CardContent className="p-6 flex flex-col items-center">
                       <div className="relative mb-4 group-hover:scale-105 transition-transform duration-300">
                         <a href={badge.link} target="_blank" rel="noopener noreferrer">
@@ -205,7 +205,7 @@ export function Achievements() {
                           <Tooltip>
                             <TooltipTrigger asChild>
                               <button
-                                className="absolute top-2 right-2 bg-gray-900/80 p-1.5 rounded-full hover:bg-purple-500/80 transition-colors"
+                                className="absolute top-2 right-2 bg-gray-900/80 p-1.5 rounded-full hover:bg-blue-500/80 transition-colors"
                                 onClick={() => setSelectedBadge(badge)}
                               >
                                 <Info className="h-4 w-4" />
@@ -217,13 +217,13 @@ export function Achievements() {
                           </Tooltip>
                         </TooltipProvider>
                       </div>
-                      <h3 className="text-lg font-bold text-center mb-1 text-purple-300">{badge.name}</h3>
+                      <h3 className="text-lg font-bold text-center mb-1 text-blue-300">{badge.name}</h3>
                       <p className="text-sm text-gray-400 text-center mb-3">Issued by {badge.issuer}</p>
                       <a
                         href={badge.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-purple-500 hover:text-purple-400 text-sm flex items-center gap-1"
+                        className="text-blue-500 hover:text-blue-400 text-sm flex items-center gap-1"
                       >
                         View Badge <ExternalLink className="h-3 w-3" />
                       </a>
@@ -239,19 +239,19 @@ export function Achievements() {
               {communityWorkData.map((work) => (
                 <Card
                   key={work.id}
-                  className="bg-gray-800/50 border-gray-700 overflow-hidden group hover:border-purple-500 transition-all duration-300"
+                  className="bg-gray-800/50 border-gray-700 overflow-hidden group hover:border-blue-500 transition-all duration-300"
                 >
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="p-3 rounded-lg bg-gray-700/50">{getCommunityWorkIcon(work.type)}</div>
                       <div className="flex-1">
                         <div className="flex justify-between items-start">
-                          <h3 className="text-lg font-bold mb-1 text-cyan-400">{work.title}</h3>
+                          <h3 className="text-lg font-bold mb-1 text-teal-400">{work.title}</h3>
                           <TooltipProvider>
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <button
-                                  className="bg-gray-900/80 p-1.5 rounded-full hover:bg-purple-500/80 transition-colors"
+                                  className="bg-gray-900/80 p-1.5 rounded-full hover:bg-blue-500/80 transition-colors"
                                   onClick={() => setSelectedCommunityWork(work)}
                                 >
                                   <Info className="h-4 w-4" />
@@ -277,7 +277,7 @@ export function Achievements() {
                               href={work.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-purple-500 hover:text-purple-400 text-sm flex items-center gap-1"
+                              className="text-blue-500 hover:text-blue-400 text-sm flex items-center gap-1"
                             >
                               Learn more <ExternalLink className="h-3 w-3" />
                             </a>
@@ -332,7 +332,7 @@ export function Achievements() {
                     href={selectedBadge.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md flex items-center gap-2"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md flex items-center gap-2"
                   >
                     View Badge <ExternalLink className="h-4 w-4" />
                   </a>
@@ -398,7 +398,7 @@ export function Achievements() {
                       href={selectedCommunityWork.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md flex items-center gap-2"
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md flex items-center gap-2"
                     >
                       Learn More <ExternalLink className="h-4 w-4" />
                     </a>

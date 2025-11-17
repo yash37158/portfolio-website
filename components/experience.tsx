@@ -108,16 +108,16 @@ export function Experience() {
   return (
     <section id="experience" className="py-20 relative overflow-hidden bg-gradient-to-b from-black to-gray-900/50">
       {/* Background elements */}
-      <div className="absolute top-1/4 -right-64 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 -left-64 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/4 -right-64 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 -left-64 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-start mb-10">
-          <div className="inline-block mb-2 px-4 py-1 rounded-full bg-purple-500/10 border border-purple-500/20">
-            <p className="text-purple-400 font-mono text-sm">Where I've Worked</p>
+          <div className="inline-block mb-2 px-4 py-1 rounded-full bg-blue-600/10 border border-blue-600/20">
+            <p className="text-blue-400 font-mono text-sm">Where I've Worked</p>
           </div>
           <h2 className="text-3xl font-bold mb-2">Experience</h2>
-          <div className="w-20 h-1 bg-purple-500 mb-2"></div>
+          <div className="w-20 h-1 bg-blue-500 mb-2"></div>
         </div>
 
         <div className="max-w-5xl mx-auto stagger-animation">
@@ -132,8 +132,8 @@ export function Experience() {
                     className={`w-full text-left px-4 py-3 border rounded-md transition-all duration-300 
                       ${
                         activeTab === exp.id
-                          ? "bg-purple-500/20 border-purple-500 text-purple-400"
-                          : "border-gray-700 bg-gray-800/50 hover:bg-gray-800/80 hover:border-purple-400/50 text-gray-300"
+                          ? "bg-blue-500/20 border-blue-500 text-blue-400"
+                          : "border-gray-700 bg-gray-800/50 hover:bg-gray-800/80 hover:border-blue-400/50 text-gray-300"
                       }`}
                   >
                     <div className="flex items-center gap-3">
@@ -159,7 +159,7 @@ export function Experience() {
             <div className="flex-1">
               {experienceData.map((exp) => (
                 <div key={exp.id} className={`${activeTab === exp.id ? "block" : "hidden"}`}>
-                  <Card className="bg-gray-800/50 backdrop-blur-sm border-gray-700 hover:border-purple-500/50 transition-all duration-300 shadow-lg shadow-black/20">
+                  <Card className="bg-gray-800/50 backdrop-blur-sm border-gray-700 hover:border-blue-500/50 transition-all duration-300 shadow-lg shadow-black/20">
                     <CardContent className="p-6">
                       <div className="flex flex-col md:flex-row md:items-start gap-4 mb-6">
                         <div className="hidden md:block w-16 h-16 rounded-lg overflow-hidden bg-gray-700 flex-shrink-0 border border-gray-600">
@@ -172,16 +172,16 @@ export function Experience() {
                           />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-2xl font-bold mb-1 text-purple-500">{exp.role}</h3>
+                          <h3 className="text-2xl font-bold mb-1 text-blue-500">{exp.role}</h3>
                           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
-                            <div className="flex items-center gap-1 text-purple-400">
+                            <div className="flex items-center gap-1 text-blue-400">
                               <span>{exp.company}</span>
                               {exp.link && (
                                 <a
                                   href={exp.link}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="text-purple-400 hover:text-purple-300"
+                                  className="text-blue-400 hover:text-blue-300"
                                 >
                                   <ExternalLink className="h-3 w-3" />
                                 </a>
@@ -202,26 +202,24 @@ export function Experience() {
                           </div>
                           <p className="text-gray-300 mb-6">{exp.description}</p>
 
-                          <h4 className="text-lg font-semibold mb-3 text-purple-300">Key Achievements</h4>
+                          <h4 className="text-lg font-semibold mb-3 text-blue-300">Key Achievements</h4>
                           <ul className="space-y-2 mb-6">
                             {exp.achievements.map((achievement, index) => (
                               <li key={index} className="flex items-start gap-2">
-                                <ChevronRight className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                                <ChevronRight className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
                                 <span className="text-gray-300">{achievement}</span>
                               </li>
                             ))}
                           </ul>
 
-                          <h4 className="text-lg font-semibold mb-3 text-purple-200">Technologies Used</h4>
+                          <h4 className="text-lg font-semibold mb-3 text-blue-200">Technologies Used</h4>
                           <div className="flex flex-wrap gap-2">
                             {exp.skills.map((skill, index) => (
                               <span
                                 key={index}
-                                className="px-3 py-1 bg-gray-700 rounded-full text-sm border border-gray-600 hover:border-purple-500 transition-colors duration-300"
+                                className="px-3 py-1 bg-gray-700 rounded-full text-sm border border-gray-600 hover:border-blue-500 transition-colors duration-300"
                               >
-                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500">
-                                  {skill}
-                                </span>
+                                {skill}
                               </span>
                             ))}
                           </div>

@@ -71,7 +71,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500"
+            className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500"
           >
             Yash<span className="text-white">.Portfolio</span>
           </Link>
@@ -91,16 +91,16 @@ export function Header() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-purple-400 ${
+                className={`text-sm font-medium transition-colors duration-200 hover:text-blue-400 ${
                   activeSection === item.id
-                    ? "text-purple-500 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-purple-500"
+                    ? "text-blue-500 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-blue-500"
                     : "text-gray-300"
                 }`}
               >
                 {item.name}
               </button>
             ))}
-            <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-500/10">
+            <Button variant="outline" className="border-blue-500 text-blue-500 hover:bg-blue-500/10">
             <a href="https://drive.google.com/file/d/10FDMFNK4GxEXV8d4XKwprwMCA8UEtOa0/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               Resume
             </a>
@@ -135,14 +135,14 @@ export function Header() {
                     scrollToSection(item.id)
                     setIsMenuOpen(false)
                   }}
-                  className={`py-2 text-left transition-colors duration-200 hover:text-purple-400 ${
-                    activeSection === item.id ? "text-purple-500" : "text-gray-300"
+                  className={`py-2 text-left transition-colors duration-200 hover:text-blue-400 ${
+                    activeSection === item.id ? "text-blue-500" : "text-gray-300"
                   }`}
                 >
                   {item.name}
                 </button>
               ))}
-              <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-500/10 w-full">
+              <Button variant="outline" className="border-blue-500 text-blue-500 hover:bg-blue-500/10 w-full">
                 Resume
               </Button>
             </nav>

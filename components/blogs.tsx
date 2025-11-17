@@ -98,7 +98,7 @@ export function Blogs() {
       case 'technology':
         return 'text-blue-400 bg-blue-400/10 border-blue-400/20'
       case 'design':
-        return 'text-purple-400 bg-purple-400/10 border-purple-400/20'
+        return 'text-blue-400 bg-blue-400/10 border-blue-400/20'
       case 'life':
         return 'text-green-400 bg-green-400/10 border-green-400/20'
       case 'business':
@@ -114,9 +114,9 @@ export function Blogs() {
         <div className="flex items-end justify-between mb-10">
           <div>
             <h2 className="text-3xl font-bold mb-2">Latest from Bytes by Yash</h2>
-            <div className="w-20 h-1 bg-purple-500"></div>
+            <div className="w-20 h-1 bg-blue-500"></div>
           </div>
-          <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-500/10" asChild>
+          <Button variant="outline" className="border-blue-500 text-blue-500 hover:bg-blue-500/10" asChild>
             <a href="https://bytes-by-yash.vercel.app/" target="_blank" rel="noopener noreferrer">
               <ExternalLink className="h-4 w-4 mr-2" /> View all posts
             </a>
@@ -132,7 +132,7 @@ export function Blogs() {
               <Button 
                 variant="outline" 
                 onClick={() => window.location.reload()}
-                className="border-purple-500 text-purple-500 hover:bg-purple-500/10"
+                className="border-blue-500 text-blue-500 hover:bg-blue-500/10"
               >
                 Try Again
               </Button>
@@ -145,7 +145,7 @@ export function Blogs() {
             posts.map((post, idx) => (
               <Card
                 key={idx}
-                className="bg-gray-800/50 border-gray-700 overflow-hidden group hover:border-purple-500 transition-all duration-300"
+                className="bg-gray-800/50 border-gray-700 overflow-hidden group hover:border-blue-500 transition-all duration-300"
               >
                 <CardContent className="p-6">
                   {post.category && (
@@ -153,7 +153,7 @@ export function Blogs() {
                       {post.category}
                     </div>
                   )}
-                  <h3 className="text-xl font-bold mb-2 text-purple-400 line-clamp-2 group-hover:text-purple-300 transition-colors">
+                  <h3 className="text-xl font-bold mb-2 text-blue-400 line-clamp-2 group-hover:text-blue-300 transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-gray-300 mb-4 line-clamp-3">{post.summary || ""}</p>
@@ -184,7 +184,7 @@ export function Blogs() {
                     <Button
                       size="sm"
                       variant="outline"
-                      className="border-cyan-500 text-cyan-500 hover:bg-cyan-500/10"
+                      className="border-teal-500 text-teal-500 hover:bg-teal-500/10"
                       asChild
                     >
                       <a href={post.url} target="_blank" rel="noopener noreferrer">
