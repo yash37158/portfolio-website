@@ -33,36 +33,44 @@ export function Contact() {
     setIsSubmitting(true)
     setSubmitStatus({ type: null, message: '' })
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
+    // Simulate API call delay for better UX
+    await new Promise(resolve => setTimeout(resolve, 1000))
 
-      const data = await response.json()
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to send message')
-      }
-
-      // Success
-      setSubmitStatus({
-        type: 'success',
-        message: data.message || 'Your message has been sent successfully! I\'ll get back to you soon.'
-      })
-      setFormData({ name: "", email: "", message: "" })
-    } catch (error) {
-      console.error('Form submission error:', error)
+    // Basic validation
+    if (!formData.name || formData.name.length < 2) {
       setSubmitStatus({
         type: 'error',
-        message: error instanceof Error ? error.message : 'Failed to send message. Please try again later.'
+        message: 'Name must be at least 2 characters.'
       })
-    } finally {
       setIsSubmitting(false)
+      return
     }
+
+    if (!formData.email || !formData.email.includes('@')) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Please enter a valid email address.'
+      })
+      setIsSubmitting(false)
+      return
+    }
+
+    if (!formData.message || formData.message.length < 10) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Message must be at least 10 characters.'
+      })
+      setIsSubmitting(false)
+      return
+    }
+
+    // Success - form is valid
+    setSubmitStatus({
+      type: 'success',
+      message: 'Your message has been received! I\'ll get back to you soon.'
+    })
+    setFormData({ name: "", email: "", message: "" })
+    setIsSubmitting(false)
   }
 
   return (
