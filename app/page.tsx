@@ -75,6 +75,7 @@ export default function Page() {
                 <div className="role">
                   <h4>{r.role}</h4>
                   <p className="meta">{r.start} – {r.end} · {r.type} · {r.location}</p>
+                  {r.lead && <p className="lead">{r.lead}</p>}
                   <ul>{r.bullets.map((b) => <li key={b}>{b}</li>)}</ul>
                 </div>
               </div>

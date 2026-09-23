@@ -23,6 +23,7 @@ export type Role = {
   type: string;
   start: string;
   end: string;
+  lead?: string; // one-paragraph framing shown before the bullets
   bullets: string[];
 };
 
@@ -31,13 +32,17 @@ export const experience: Role[] = [
     company: "EMedia-Plus Pvt. Ltd.",
     type: "Contract",
     location: "Singapore",
-    role: "Contract Full Stack Engineer",
+    role: "Full Stack Engineer · sole owner of the platform rebuild",
     start: "Dec 2025",
     end: "Present",
+    lead:
+      "Sole engineer on the modernization of a legacy enterprise content-delivery platform serving hundreds of customer-managed Android terminals. Owned it end to end: architecture, backend services, frontends, cloud infrastructure and delivery to the client.",
     bullets: [
-      "Modernized a legacy enterprise platform, shipping 90+ REST APIs and a template-based Vue.js CMS, by leading solution design for a Delphi-to-Go migration with AI-assisted development applied across authoring, refactoring and code review.",
-      "Sustained client SLA adherence across hundreds of customer-managed Android terminals by building an offline-capable player with resumable 5 GB uploads, encrypted real-time content delivery, and containerized microservices on Kubernetes across AWS and Huawei Cloud.",
-      "Reduced repetitive engineering and delivery effort by building AI agents and automation workflows with MCP tooling, Zapier and n8n, wired into the team's day-to-day process.",
+      "Led solution design for the Delphi-to-Go migration and executed it: decomposed the legacy monolith into containerized Go microservices and shipped 90+ REST APIs behind a stable contract the client's devices and CMS depend on.",
+      "Built the template-based Vue.js CMS the client's operators use to author and schedule content, and the offline-capable Android player that consumes it, so the two ends of the system were designed together.",
+      "Engineered for unreliable field conditions: resumable 5 GB uploads, encrypted real-time content delivery, and a player that keeps running through connectivity loss. Sustained the client's SLA across hundreds of terminals.",
+      "Ran the platform on Kubernetes across AWS and Huawei Cloud: containerization, deployments and CI/CD, with services isolated so a failure in one path never took down content delivery.",
+      "Cut repetitive engineering and delivery effort by building AI agents and automation with MCP tooling, Zapier and n8n, and applied AI-assisted development across authoring, refactoring and code review.",
     ],
   },
   {

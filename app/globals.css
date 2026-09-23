@@ -84,6 +84,7 @@ strong { color: var(--text); font-weight: 500; }
 .role::before { content: ""; position: absolute; left: -33px; top: 9px; width: 12px; height: 12px; border-radius: 50%; background: var(--dim); border: 2px solid var(--card); }
 .role h4 { color: var(--text); font-weight: 500; font-size: 18px; }
 .role .meta { color: var(--dim); font-size: 15px; margin-top: 2px; }
+.role .lead { margin-top: 12px; color: var(--text); font-size: 16px; }
 .role ul { margin-top: 10px; display: grid; gap: 6px; padding-left: 18px; list-style: disc; font-size: 15.5px; }
 .role li::marker { color: var(--dim); }
 
