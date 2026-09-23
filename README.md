@@ -1,4 +1,4 @@
-# yash37158.github.io — portfolio
+# Portfolio — Yash Sharma
 
 Static portfolio site built with Next.js 15 (App Router, `output: "export"`), React 19 and plain CSS. No backend.
 
