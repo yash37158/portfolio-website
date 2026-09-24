@@ -133,6 +133,15 @@ export const projects: Project[] = [
     // image: "/projects/meshify.png", // add a screenshot here
   },
   {
+    name: "AutoRide EDA",
+    tagline: "Event-driven autonomous taxi simulation",
+    description:
+      "Event-driven simulation of an autonomous taxi fleet across Manhattan: five backend services (API gateway, location simulator, Gemini-powered dispatcher, WebSocket realtime gateway, ride-request service) decoupled over Kafka-compatible RedPanda, with dynamic surge pricing and a live Mapbox fleet map.",
+    stack: ["Next.js 15", "TypeScript", "Kafka / RedPanda", "Gemini", "PostgreSQL", "Redis", "Docker Compose"],
+    repo: "https://github.com/yash37158/AutoRide-EDA",
+    image: "/projects/autoride.png",
+  },
+  {
     name: "Verbatim",
     tagline: "Ask your documents. Get answers you can verify.",
     description:
